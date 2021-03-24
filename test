@@ -1,0 +1,75 @@
+package bai12;
+
+/**
+ *
+ * @author Quang
+ */
+import java.util.Scanner;
+public abstract class Nguoi {
+    private String name,birth,address;
+    boolean type;
+    public abstract double tinhDiem();
+    public  Nguoi(){
+        
+    }
+    public Nguoi(String name,String birth,String address,boolean type){
+        this.name=name;
+        this.address=address;
+        this.birth=birth;
+        this.type=type;
+    }
+    
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public boolean isType() {
+        return type;
+    }
+
+    public void setType(boolean type) {
+        this.type = type;
+    }
+
+    
+    
+    public void nhapThongTin(){
+        Scanner sn=new Scanner(System.in);
+        System.out.print("nhap Ho Ten:");
+            this.name=sn.nextLine();
+        System.out.print("nhap Ngay Sinh:");
+            this.birth=sn.nextLine();
+        System.out.print("nhap Dia Chi:");
+            this.address=sn.nextLine();
+        System.out.print("nhap loai sinh vien:");
+            this.type=sn.hasNextLine();
+    }
+    public void inThongTin(){
+        System.out.println("ho ten:"+this.name);
+        System.out.println("ngay sinh:"+this.birth);
+        System.out.println("dia chi:"+this.address);
+        System.out.println("loai sv:"+((this.type==true)?"SVCDN":"SVCDCQ"));
+        System.out.println("Diem Trung Binh:"+this.tinhDiem());
+    }
+}
